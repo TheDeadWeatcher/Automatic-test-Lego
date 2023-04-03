@@ -1,0 +1,39 @@
+{
+  "name": "cypress-lego2",
+  "version": "1.0.0",
+  "description": "Automatic test ",
+  "main": "index.js",
+  "scripts": {
+    "open": "npx cypress open",
+    "spec": "npx cypress run --spec 'cypress/e2e/vipPage.cy.js'",
+    "spech": "npx cypress run --spec 'cypress/e2e/homePage.cy.js' --headless",
+    "speca": "npx cypress run --spec 'cypress/e2e/accountLogIn.cy.js' --headless",
+    "all": "npx cypress run --e2e 'cypress/e2e/*.cy.js'",
+    "chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/wishlistPage.cy.js' --headed",
+    "chrome1": "npx cypress run --browser chrome --spec 'cypress/e2e/accountLogIn.cy.js' --headless",
+    "firefox": "npm run spec -- --browser firefox",
+    "edge": "npm run spec -- --browser edge",
+    "browser": "npm run spec -- --browser firefox & npm run spec -- --browser edge npm run spec -- --browser chrome",
+    "browserAll": "npm run all -- --browser firefox & npm run all -- --browser edge npm run all -- --browser chrome",
+    "dashboardAll": "npx cypress run --record --key b51126bb-969f-4eb6-875a-2b8037e1801f",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
+    "delete-results": "rm -rf cypress/results/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "regression": "npm run delete-results && npm run delete-mochawesome-report && npm run spec && npm run mochawesome-merge"
+  },
+  "author": "Bartosz Jasyk",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.4.2",
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.9.0",
+    "cypress-audit": "^1.1.0",
+    "cypress-multi-reporters": "^1.6.3",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
