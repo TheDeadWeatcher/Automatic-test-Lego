@@ -10,7 +10,7 @@ describe("E2E - cart page - LEGO", () => {
   beforeEach(() => {
     cy.visit(url.pluszowyVaderUrl);
     cy.acceptEnterPopups();
-    cy.get('[data-test="add-to-bag"] > .ButtonLabelWithProgressstyles__StyledMessage-sc-19upyqe-1')
+    cy.get('[data-test="add-to-bag"]')
       .should("be.visible")
       .click();
     cy.get('[data-test="continue-shopping-button"]').click();
