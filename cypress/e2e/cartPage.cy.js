@@ -7,18 +7,13 @@ describe("E2E - cart page - LEGO", () => {
     });
   });
 
-  beforeEach(() => {
-    cy.visit(url.pluszowyVaderUrl);
-    cy.acceptEnterPopups();
-    cy.get('[data-test="add-to-bag"]')
-      .should("be.visible")
-      .click();
-    cy.get('[data-test="continue-shopping-button"]').click();
-    cy.get('[data-test="util-bar-cart"]')
-      .scrollIntoView()
-      .click({ force: true });
-    cy.url().should("eq", url.cartUrl);
-  });
+   beforeEach(() => {
+     cy.visit(url.pluszowyVaderUrl);
+     cy.acceptEnterPopups();
+     cy.get('[data-test="add-to-bag"]').should("be.visible").click();
+     cy.get('[data-test="view-my-bag"]').click();
+     cy.url().should("eq", url.cartUrl);
+   });
 
   it("Should add produkt to basket, click on cart icon and verify url also verify last price", () => {
     cy.get(".dVnvUT").click();

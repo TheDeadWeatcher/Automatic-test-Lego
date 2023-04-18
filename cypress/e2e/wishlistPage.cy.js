@@ -18,7 +18,7 @@ describe("E2E - wishlist - LEGO", () => {
 
   it('should correct log in to lego account and verify url', () => {
    
-    cy.get('[data-test="util-bar-wishlist"]').click({force: true});
+    cy.get('[data-test="util-bar-wishlist"]').click();
     cy.get('[data-test="legoid-login-link"]').click();
     cy.loginOnlyPass(data.email, data.pass);
     cy.url().should('eq', url.homeUrl)
