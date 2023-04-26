@@ -15,13 +15,10 @@ require('@cypress/xpath');
 // Import commands.js using ES2015 syntax:
 import './commands';
 
-
 // for firefox login problem ( The following error originated from your application code, not from Cypress’)
-Cypress.on("uncaught:exception", (err, runnable) => {
+Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });
-
-
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -7,12 +7,12 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-import "@cypress-audit/lighthouse/commands";
+import '@cypress-audit/lighthouse/commands';
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 
-Cypress.Commands.add("loginLegoAccount", (email, pass) => {
+Cypress.Commands.add('loginLegoAccount', (email, pass) => {
   cy.get('[fill-rule="nonzero"]').click();
   cy.get('[data-test="legoid-login-button"]').click();
   cy.get('[name="username"]').type(email);
@@ -20,30 +20,29 @@ Cypress.Commands.add("loginLegoAccount", (email, pass) => {
   cy.get('[data-testid="loginBtn"]').click();
 });
 
-Cypress.Commands.add("loginOnlyPass", (email, pass) => {
+Cypress.Commands.add('loginOnlyPass', (email, pass) => {
   // cy.session([email, pass], () => {
-    cy.get('[name="username"]').type(email);
-    cy.get('[name="password"]').type(pass);
-    cy.get('[data-testid="loginBtn"]').click();
+  cy.get('[name="username"]').type(email);
+  cy.get('[name="password"]').type(pass);
+  cy.get('[data-testid="loginBtn"]').click();
   // })
-  
 });
 
-Cypress.Commands.add("acceptEnterPopups", () => {
+Cypress.Commands.add('acceptEnterPopups', () => {
   cy.get('[data-test="age-gate-grown-up-cta"]').click();
   cy.get('[data-test="cookie-accept-all"]').click();
   // cy.clearAllCookies();
 });
 
-Cypress.Commands.add("typePhrase", (text, delayValue) => {
-  cy.get('[data-test="search-input-button"]').type(text,{delay: delayValue});
+Cypress.Commands.add('typePhrase', (text, delayValue) => {
+  cy.get('[data-test="search-input-button"]').type(text, { delay: delayValue });
 });
 
-Cypress.Commands.add("typePhraseAny", ($selector, text, delayValue) => {
-  cy.get($selector).type(text, {delay: delayValue});
+Cypress.Commands.add('typePhraseAny', ($selector, text, delayValue) => {
+  cy.get($selector).type(text, { delay: delayValue });
 });
 
-Cypress.Commands.add("selectProduct", (productName) => {
+Cypress.Commands.add('selectProduct', (productName) => {
   cy.get('[data-test="product-leaf-title"] > span').each(
     ($el, index, $list) => {
       if ($el.text().includes(productName)) {
@@ -53,7 +52,7 @@ Cypress.Commands.add("selectProduct", (productName) => {
   );
 });
 
-Cypress.Commands.add("clickBtn", ($selector) => {
+Cypress.Commands.add('clickBtn', ($selector) => {
   cy.get($selector).click();
 });
 //

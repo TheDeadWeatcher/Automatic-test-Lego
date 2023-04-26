@@ -1,11 +1,10 @@
 class HomePage {
-
-  get logo(){
+  get logo() {
     return cy.get('[data-test="lego-logo"]');
   }
 
   get topNav() {
-    return cy.get(".MainBarstyles__Container-sc-1cg7sjw-1");
+    return cy.get('.MainBarstyles__Container-sc-1cg7sjw-1');
   }
 
   get mainSlider() {
@@ -14,13 +13,12 @@ class HomePage {
     );
   }
 
-
   get recommendetSection() {
     return cy.get('[data-test="product-recommended"]');
   }
 
   get bestsellerSection() {
-    return cy.get("#bltc656648b79074da5");
+    return cy.get('#bltc656648b79074da5');
   }
 
   get footer() {
@@ -35,17 +33,15 @@ class HomePage {
     return cy.get('[data-test="footer-social-links"]');
   }
 
-  get specialCatBaner () {
+  get specialCatBaner() {
     return cy.get('[data-test="quicklink-link"]');
   }
 
-
-  clickSLiderBtn () {
-    const btn = cy.get ('[kind="lightTheme"]');
+  clickSLiderBtn() {
+    const btn = cy.get('[kind="lightTheme"]');
     btn.should('be.visible');
     btn.click();
   }
-
-}  
+}
 
 export default new HomePage();

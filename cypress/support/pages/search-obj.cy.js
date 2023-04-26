@@ -1,12 +1,9 @@
-
 class SearchBar {
-
-  clickLoopIcon () {
+  clickLoopIcon() {
     const loop = cy.get('[data-test="search-input-button"]');
-    loop.should("be.visible");
+    loop.should('be.visible');
     loop.click();
   }
-
 
   get searchResultProducts() {
     return cy.get('[data-test="product-leaf-title"]');
@@ -14,14 +11,13 @@ class SearchBar {
 
   get searchResultTitle() {
     return cy.xpath('//span[text()="star wars vader"]');
-    
   }
 
-  get firstProductResult (){
+  get firstProductResult() {
     return cy.get('[data-test="product-item"]');
   }
 
-  get searchResultProductsPrice (){
+  get searchResultProductsPrice() {
     return cy.get('[data-test="product-price"]');
   }
 }
